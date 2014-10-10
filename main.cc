@@ -16,17 +16,22 @@ int main() {
         tank.add(oscar);
 
         cout << "tank's contents: " << "\n";
-	tank.display_fishes();
-
-        cout << guppy.get_name() << "'s size: " << guppy.get_size() << "\n";
-        cout << oscar.get_name() << "'s size: " << oscar.get_size() << "\n";
+        for (unsigned int i = 0; i < tank.get_fishes().size(); i++)
+        {
+                std::cout << "\t" << tank.get_fishes()[i].get_name() << "'s size: " << tank.get_fishes()[i].get_size() << "\n";
+        }
 
         oscar.eat(guppy);
+//	tank.remove(guppy);
+
         cout << oscar.get_name() << " just ate " << guppy.get_name() << "...\n";
         cout << oscar.get_name() << "'s new size: " << oscar.get_size() << "\n";
 
-        cout << "tank's contents: " << "\n";
-	tank.display_fishes();
+        cout << "tank's new contents: " << "\n";
+        for (unsigned int i = 0; i < tank.get_fishes().size(); i++)
+        {
+                std::cout << "\t" << tank.get_fishes()[i].get_name() << "'s size: " << tank.get_fishes()[i].get_size() << "\n";
+        }
 
         return 0;
 

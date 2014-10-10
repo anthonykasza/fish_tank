@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 Tank::Tank(){
 	int size = 10;
@@ -15,16 +16,9 @@ void Tank::add(Fish& fish){
 }
 
 //void Tank::remove(Fish& fish){
-//        fishes.remove(fish);
+//	fishes.erase( std::remove( fishes.begin(), fishes.end(), fish ), fishes.end() );
 //}
 
 std::vector<Fish> Tank::get_fishes(){
         return fishes;
-}
-
-void Tank::display_fishes(){
-	for (unsigned int i = 0; i < fishes.size(); i++)
-	{
-		std::cout << "\t" << fishes[i].get_name() << ": " << fishes[i].get_size() << "\n";
-	}
 }
